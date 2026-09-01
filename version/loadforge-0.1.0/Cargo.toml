@@ -1,0 +1,27 @@
+﻿[package]
+name = "loadforge"
+version = "0.1.0"
+edition = "2021"
+description = "High-performance load testing engine powered by Rust"
+license = "MIT"
+
+[lib]
+name = "loadforge"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.22", features = ["extension-module"] }
+tokio = { version = "1", features = ["full"] }
+hyper = { version = "1", features = ["client", "http1", "http2"] }
+hyper-util = { version = "0.1", features = ["tokio", "client-legacy", "http1"] }
+http = "1"
+http-body = "1"
+http-body-util = "0.1"
+dashmap = "6"
+rand = "0.8"
+bytes = "1"
+serde_json = "1"
+rustls = { version = "0.23", default-features = false, features = ["ring", "logging", "std", "tls12"] }
+tokio-rustls = { version = "0.26", default-features = false, features = ["ring", "tls12"] }
+webpki-roots = "1"
+ring = "0.17"
